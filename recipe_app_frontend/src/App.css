@@ -1,42 +1,37 @@
 :root {
-  --primary: #3f51b5;
-  --secondary: #ff9800;
-  --accent: #00bcd4;
-
-  --bg-primary: #FFFFFF;
-  --bg-secondary: #F8FAFC;
-  --card-bg: #f9f9f9;
-  --card-border: #e3e6eb;
-  --text: #22264c;
-  --text-light: #555;
-  --border: #e9e9ec;
-
-  --btn-bg: var(--primary);
-  --btn-text: #fff;
-  --btn-hover: #253088;
-
-  --danger-bg: #e53935;
+  --primary: #111111;          /* Black for main tint */
+  --secondary: #4b4b4b;        /* Deep gray for buttons and interactions */
+  --accent: #bcbcbc;           /* Light gray accent */
+  --bg-primary: #ffffff;       /* White background for light theme */
+  --bg-secondary: #f3f3f3;     /* Near white secondary bg */
+  --card-bg: #fff;             /* Card backgrounds white */
+  --card-border: #d1d1d1;      /* Light gray border */
+  --text: #111;                /* Main text black */
+  --text-light: #757575;       /* Hazy gray (secondary) */
+  --border: #d1d1d1;           /* Border color */
+  --btn-bg: var(--secondary);  /* Button: deep gray */
+  --btn-text: #fff;            /* White text */
+  --btn-hover: #222;           /* Near black hover */
+  --danger-bg: #222;           /* Black/dark for delete */
   --danger-text: #fff;
 }
 [data-theme="dark"] {
-  --primary: #303e80;
-  --secondary: #af6d18;
-  --accent: #008fa6;
-
-  --bg-primary: #181e25;
-  --bg-secondary: #232931;
-  --card-bg: #253144;
-  --card-border: #2a3441;
-  --text: #ececec;
-  --text-light: #9eaec7;
-  --border: #222;
-  --btn-bg: var(--primary);
+  --primary: #fff;             /* White as main color for dark mode */
+  --secondary: #888;           /* Medium-light gray for buttons */
+  --accent: #222;              /* Near black accent */
+  --bg-primary: #121212;       /* Black background */
+  --bg-secondary: #242424;     /* Deep gray */
+  --card-bg: #181818;          /* Card background black */
+  --card-border: #383838;      /* Gray border */
+  --text: #ffffff;             /* White text */
+  --text-light: #bbbbbb;       /* Light gray secondary text */
+  --border: #383838;
+  --btn-bg: #292929;
   --btn-text: #fff;
-  --btn-hover: #4049a7;
-  --danger-bg: #e53935;
-  --danger-text: #fff;
+  --btn-hover: #fff;
+  --danger-bg: #fff;
+  --danger-text: #222;
 }
-
 body, html, #root, .App {
   background: var(--bg-primary);
   color: var(--text);
@@ -44,7 +39,6 @@ body, html, #root, .App {
   margin: 0;
   min-height: 100vh;
 }
-
 /* Navigation Bar */
 .navbar {
   width: 100%;
@@ -58,7 +52,7 @@ body, html, #root, .App {
   position: sticky;
   top: 0;
   z-index: 9;
-  box-shadow: 0 2px 7px 0 rgba(34, 34, 55, 0.042);
+  box-shadow: 0 2px 7px 0 rgba(34, 34, 34, 0.07);
 }
 .navbar-app {
   font-weight: 700;
@@ -73,12 +67,12 @@ body, html, #root, .App {
   border-radius: 1em;
   cursor: pointer;
   font-size: 1em;
-  transition: background 0.2s;
+  transition: background 0.15s, color 0.13s;
 }
 .theme-btn:hover {
   background: var(--accent);
+  color: #111;
 }
-
 .top-bar {
   display: flex;
   align-items: center;
@@ -97,7 +91,7 @@ body, html, #root, .App {
 }
 .add-btn {
   background: var(--accent);
-  color: #fff;
+  color: #111;
   border: none;
   border-radius: 1em;
   font-size: 1.06rem;
@@ -105,14 +99,13 @@ body, html, #root, .App {
   font-weight: 600;
   cursor: pointer;
   margin-left: 1rem;
-  transition: background 0.19s;
-  box-shadow: 0 2px 6px #00bcd473;
+  transition: background 0.19s, color 0.13s;
+  box-shadow: 0 2px 6px #bcbcbc47;
 }
 .add-btn:hover {
   background: var(--secondary);
+  color: #fff;
 }
-
-
 /* Search bar */
 .search-bar {
   display: flex;
@@ -137,7 +130,6 @@ body, html, #root, .App {
 .search-input:focus {
   border: 1.5px solid var(--primary);
 }
-
 /* Recipe Grid & Cards */
 .recipe-grid {
   display: grid;
@@ -152,7 +144,7 @@ body, html, #root, .App {
   color: var(--text);
   border: 1px solid var(--card-border);
   border-radius: 16px;
-  box-shadow: 0 3px 15px rgba(50, 70, 110, 0.045);
+  box-shadow: 0 3px 15px rgba(50, 50, 50, 0.05);
   overflow: hidden;
   cursor: pointer;
   transition: transform 0.12s, box-shadow 0.15s;
@@ -162,16 +154,17 @@ body, html, #root, .App {
 }
 .recipe-card:hover, .recipe-card:focus {
   transform: translateY(-3px) scale(1.03);
-  box-shadow: 0 6px 24px 0px #00bcd452;
-  outline: 1.5px solid var(--accent);
+  box-shadow: 0 6px 24px 0px #8885;
+  outline: 1.5px solid var(--secondary);
 }
 .recipe-thumb {
   width: 100%;
   height: 160px;
-  background: #cbcbcb;
+  background: #d7d7d7;
   object-fit: cover;
   object-position: center 55%;
   border-bottom: 1px solid var(--border);
+  filter: grayscale(1);
 }
 .recipe-card-content {
   padding: 1.2em 1.1em 1.4em 1.2em;
@@ -201,24 +194,24 @@ body, html, #root, .App {
 }
 .tag {
   display: inline-block;
-  font-size: 0.90em;
-  color: var(--accent);
-  background: #c9eff4;
+  font-size: 0.9em;
+  color: #222;
+  background: #e5e5e5;
   border-radius: 0.8em;
   padding: 0 .7em;
   margin-bottom: 2px;
   font-weight: 600;
+  letter-spacing: 0.4px;
 }
 [data-theme="dark"] .tag {
-  color: var(--accent);
-  background: #1f383f;
+  color: #fff;
+  background: #222;
 }
-
 /* Modal/Backdrop */
 .modal-backdrop {
   position: fixed;
   top:0; left:0; bottom:0; right:0;
-  background: rgba(0,0,0,0.11);
+  background: rgba(10,10,10,0.14);
   z-index: 99;
   display:flex;
   align-items:center;
@@ -231,7 +224,7 @@ body, html, #root, .App {
   max-width: 425px;
   width: 97vw;
   padding: 2.1rem 2rem 2rem 2rem;
-  box-shadow: 0 8px 48px 1px #00000044;
+  box-shadow: 0 8px 48px 1px #1111;
   border-radius: 22px;
   position: relative;
   animation: appearModal 0.17s;
@@ -257,7 +250,6 @@ body, html, #root, .App {
   justify-content: flex-end;
   align-items: center;
 }
-
 .recipe-detail {
   text-align: left;
   color: var(--text);
@@ -268,6 +260,7 @@ body, html, #root, .App {
   object-fit: cover;
   border-radius: 10px;
   margin-bottom: 1.1em;
+  filter: grayscale(1);
 }
 .recipe-detail h2 {
   margin: 0 0 0.15em 0;
@@ -279,20 +272,20 @@ body, html, #root, .App {
 .recipe-detail ul { padding-left: 1.3em; margin: 0;}
 .recipe-detail li { margin-bottom: 0.15em; font-size: 1.01em;}
 .instructions {
-  background: #f7fcff;
-  color: #222;
+  background: #ededed;
+  color: #111;
   border-radius: 0.63em;
   padding: 0.6em 0.8em;
   white-space: pre-line;
   font-size: 1.01em;
   font-family: inherit;
   margin: 0;
-  border: 1px solid #dde9f1;
+  border: 1px solid #dfdfdf;
 }
 [data-theme="dark"] .instructions {
-  background: #1c2330;
-  color: #e2e4f6;
-  border: 1px solid #293043;
+  background: #181818;
+  color: #fff;
+  border: 1px solid #383838;
 }
 .edit-btn, .del-btn, .close-btn, .save-btn {
   min-width: 70px;
@@ -302,23 +295,22 @@ body, html, #root, .App {
   border: none;
   font-weight: 500;
   cursor: pointer;
-  transition: background 0.18s;
+  transition: background 0.18s, color 0.13s;
 }
-.edit-btn { background: var(--primary); color: var(--btn-text);}
-.edit-btn:hover { background: var(--btn-hover);}
+.edit-btn { background: var(--secondary); color: #fff;}
+.edit-btn:hover { background: #111; color: #fff;}
 .del-btn { background: var(--danger-bg); color: var(--danger-text);}
-.del-btn:hover { background: #b71c1c;}
-.close-btn { background: #ccc; color: #181e25;}
-.close-btn:hover { background: #ddd;}
-.save-btn { background: var(--accent); color: var(--btn-text);}
-.save-btn:hover { background: var(--secondary);}
+.del-btn:hover { background: #444; color: #fff;}
+.close-btn { background: #cbcbcb; color: #222;}
+.close-btn:hover { background: #eee;}
+.save-btn { background: var(--accent); color: #111;}
+.save-btn:hover { background: var(--secondary); color: #fff;}
 .form-error {
-  color: var(--danger-bg);
+  color: #c81e1e;
   margin-bottom: 0.9em;
   font-size: 1.03em;
   font-weight: 500;
 }
-
 .recipe-form {
   text-align: left;
 }
@@ -343,37 +335,34 @@ body, html, #root, .App {
   background: #fff;
   color: var(--text);
   font-size: 1em;
-  transition: border 0.17s;
+  transition: border 0.17s, background 0.13s, color 0.12s;
 }
 [data-theme="dark"] .recipe-form input, 
 [data-theme="dark"] .recipe-form textarea {
-  background: #232931;
-  color: #e4eaff;
-  border: 1.1px solid #404b6d;
+  background: #222;
+  color: #fff;
+  border: 1.1px solid #444;
 }
 .recipe-form input:focus, .recipe-form textarea:focus {
-  border: 1.3px solid var(--accent);
+  border: 1.3px solid var(--secondary);
 }
-
 .empty-hint {
   text-align: center;
   color: var(--text-light);
   padding: 2.5em 0;
   font-size: 1.13rem;
 }
-
 /* Footer */
 .footer {
   padding: 1.3em 1em 0.8em 1em;
   font-size: 1.01em;
-  color: var(--accent);
+  color: #757575;
   text-align: center;
   margin-top: 1.5em;
   background: var(--bg-secondary);
   border-top: 1px solid var(--border);
   letter-spacing: .7px;
 }
-
 /* Responsive Design */
 @media (max-width: 900px) {
   .top-bar, .search-bar { padding-left: 1rem; padding-right: 1rem; }

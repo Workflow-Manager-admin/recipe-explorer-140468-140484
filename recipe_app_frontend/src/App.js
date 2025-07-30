@@ -173,7 +173,7 @@ function App() {
       )}
       <footer className="footer">
         <span>
-          Recipe Explorer &copy; {new Date().getFullYear()} | Modern, Light Theme
+          Recipe Explorer &copy; {new Date().getFullYear()} | Modern, Monochrome Theme
         </span>
       </footer>
     </div>
